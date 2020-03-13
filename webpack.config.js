@@ -3,7 +3,7 @@ const path = require('path');
 // var DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-    entry: __dirname + `/client/src/index.jsx`,
+  entry: __dirname + `/client/src/index.jsx`,
   output: {
     filename: 'bundle.js',
     path: __dirname + '/client/dist',
@@ -15,8 +15,8 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 };
