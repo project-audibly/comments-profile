@@ -7,11 +7,11 @@ const songIdGen = () => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 const commentsCreater = () => {
-  const comContainer = [];
+  const commentsContainer = [];
   const replyNumberGen = () => (
     Math.floor(Math.random() * 3)
   );
-  for (let i = 0; i < replyNumberGen(); i + 1) {
+  for (let i = 0; i < replyNumberGen(); i += 1) {
     const user = {
       name: faker.name.findName(),
       location: faker.address.city(),
@@ -23,14 +23,14 @@ const commentsCreater = () => {
       text: faker.lorem.sentence(),
       time: faker.date.recent(),
     };
-    comContainer.push(comments);
+    commentsContainer.push(comments);
   }
   return comContainer;
 };
 
 const commentAndReplyCreator = () => {
   const container = [];
-  for (let i = 0; i < 100; i + 1) {
+  for (let i = 0; i < 100; i += 1) {
     const user = {
       name: faker.name.findName(),
       location: faker.address.city(),
