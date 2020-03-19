@@ -3,7 +3,9 @@ import React from 'react';
 const MusicProfile = () => (
   <div>
     <div className='CM-musicProfile-left'>
-      <div>image</div>
+      <div>
+        <img className='CM-profile-album-image' src='/Users/patmac510/Documents/hackreactor/comments-profile/client/dist/images/profile-album-image.jpg' alt='' />
+      </div>
       <div>name</div>
       <div>followers   tracks</div>
       <button>follow</button>

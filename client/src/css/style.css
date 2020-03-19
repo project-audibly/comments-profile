@@ -2,3 +2,19 @@
   border-radius: 50%;
   height: 30px;
 }
+
+.CM-tracker-play-image {
+  height: 15px;
+}
+
+.CM-tracker-likes-image {
+  height: 15px;
+}
+
+.CM-tracker-reposts-image {
+  height: 15px;
+}
+
+.CM-profile-album-image {
+  height: 75px;
+}
