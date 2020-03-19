@@ -3,6 +3,8 @@ import axios from 'axios';
 import { ajax } from 'jquery'
 import CommentsList from './commentsList.jsx';
 import CommentsInputBar from './commentsInputBar.jsx'
+import Tracker from './tracker.jsx';
+import MusicProfile from './musicProfile.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,6 +42,8 @@ class App extends React.Component {
       <div>
         <div className="CM-comments">
           <CommentsInputBar />
+          <Tracker />
+          <MusicProfile />
           <CommentsList comments={this.props.sampleData} />
         </div>
       </div>
