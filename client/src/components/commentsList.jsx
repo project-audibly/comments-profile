@@ -9,4 +9,23 @@ const CommentsList = ({comments}) => (
   </div>
 );
 
+// class CommentsList extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       show: false,
+//     };
+//   }
+//   render() {
+//     return (
+//       <div>
+//         {this.props.comments.map((comment) =>
+//           <CommentsEntry comment={comment} />
+//         )}
+//       </div>
+//     )
+//   }
+// }
+
+
 export default CommentsList;

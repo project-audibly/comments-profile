@@ -22,15 +22,15 @@ class Tracker extends React.Component {
         </div>
       <div className='CM-trackerValues'>
         <div className='CM-track-plays'>
-          <img className='CM-tracker-play-image' src='/Users/patmac510/Documents/hackreactor/comments-profile/client/dist/images/tracker-play-btn.png' alt='' />
+          <img className='CM-tracker-play-image' src='public/images/tracker-play-btn.png' alt='' />
           {this.state.plays}
         </div>
         <div className='CM-track-likes'>
-          <img className='CM-tracker-likes-image' src='/Users/patmac510/Documents/hackreactor/comments-profile/client/dist/images/tracker-like.png' alt='' />
+          <img className='CM-tracker-likes-image' src='public/images/tracker-like.png' alt='' />
           {this.state.likes}
         </div>
         <div className='CM-track-reposts'>
-          <img className='CM-tracker-reposts-image' src='/Users/patmac510/Documents/hackreactor/comments-profile/client/dist/images/tracker-repost.png' alt='' />
+          <img className='CM-tracker-reposts-image' src='public/images/tracker-repost.png' alt='' />
           {this.state.reposts}
         </div>
       </div>
