@@ -12,19 +12,19 @@ class App extends React.Component {
     this.state = {
       comments: [],
     };
-    // this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
-  // componentDidMount() {
-  //   axios.get('/api/comments')
-  //     .then((response) => {
-  //       // console.log(response.data);
-  //       this.setState({comments: response.data})
-  //       console.log('Success! Retrieved data from server')
-  //     })
-  //     .catch((error) => {
-  //       console.log(error, 'failed to retrieve list of commments');
-  //     });
+  componentDidMount() {
+    axios.get('/api/comments')
+      .then((response) => {
+        // console.log(response.data);
+        this.setState({ comments: response.data });
+        console.log('Success! Retrieved data from server');
+      })
+      .catch((error) => {
+        console.log(error, 'failed to retrieve list of commments');
+      });
     // ajax({
     //   method: 'GET',
     //   url: '/api/comments',
@@ -35,7 +35,7 @@ class App extends React.Component {
     //     console.log(err, 'unable to connect client to server')
     //   }
     // })
-  // }
+  }
 
   render() {
     return (
@@ -44,7 +44,7 @@ class App extends React.Component {
           <CommentsInputBar />
           <Tracker />
           <MusicProfile />
-          <CommentsList comments={this.props.sampleData} />
+          <CommentsList comments={this.state.comments} />
         </div>
       </div>
     );

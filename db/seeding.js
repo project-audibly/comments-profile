@@ -25,7 +25,7 @@ const commentsCreater = () => {
     };
     commentsContainer.push(comments);
   }
-  return comContainer;
+  return commentsContainer;
 };
 
 const commentAndReplyCreator = () => {
