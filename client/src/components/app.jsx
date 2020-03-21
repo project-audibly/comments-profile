@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { ajax } from 'jquery'
 import CommentsList from './commentsList.jsx';
 import CommentsInputBar from './commentsInputBar.jsx'
 import Tracker from './tracker.jsx';
@@ -25,16 +24,16 @@ class App extends React.Component {
       .catch((error) => {
         console.log(error, 'failed to retrieve list of commments');
       });
-    // ajax({
-    //   method: 'GET',
-    //   url: '/api/comments',
-    //   success: () => {
-    //     console.log('client is now connected to server')
-    //   },
-    //   error: (err) => {
-    //     console.log(err, 'unable to connect client to server')
-    //   }
-    // })
+  }
+
+  addComment() {
+    axios.post('/api/comments')
+      .then(() => {
+        console.log('post request succeeded')
+      })
+      .catch((error) => {
+        console.log(error, 'failed to post comment')
+      })
   }
 
   render() {

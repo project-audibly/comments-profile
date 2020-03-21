@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1584741624122" clover="3.2.0">
-  <project timestamp="1584741624122" name="All files">
-    <metrics statements="12" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2" elements="20" coveredelements="6" complexity="0" loc="12" ncloc="12" packages="1" files="4" classes="4"/>
+<coverage generated="1584828794133" clover="3.2.0">
+  <project timestamp="1584828794134" name="All files">
+    <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="11" coveredmethods="3" elements="27" coveredelements="8" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
+    <file name="app.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/app.jsx">
+      <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="3"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+    </file>
     <file name="commentsEntry.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsEntry.jsx">
-      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <line num="14" count="0" type="stmt"/>
       <line num="15" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="26" count="0" type="stmt"/>
-    </file>
-    <file name="commentsList.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsList.jsx">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="4" count="2" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="7" count="3" type="stmt"/>
-    </file>
-    <file name="musicProfile.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/musicProfile.jsx">
-      <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="0" type="stmt"/>
-    </file>
-    <file name="tracker.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/tracker.jsx">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <line num="5" count="0" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>
