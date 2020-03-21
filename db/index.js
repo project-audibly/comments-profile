@@ -72,4 +72,4 @@ const logCommentInDB = (input, callback) => {
     });
 };
 
-module.exports = { getAllComments };
+module.exports = { getAllComments, logCommentInDB };

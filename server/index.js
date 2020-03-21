@@ -21,6 +21,16 @@ app.get('/api/comments', (req, res) => {
   });
 });
 
+app.post('/api/comments', (req, res) => {
+  db.logCommentInDB(req.body, (err, data) => {
+    if (err) {
+      res.status(400).send('unable to log comment into database')
+    } else {
+      res.send(data);
+    }
+  });
+});
+
 app.listen(port, (err) => {
   if (err) {
     console.log(err, `unable to connect to port ${port}`);
