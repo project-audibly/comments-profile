@@ -12,6 +12,7 @@ class App extends React.Component {
       comments: [],
     };
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
@@ -26,8 +27,8 @@ class App extends React.Component {
       });
   }
 
-  addComment() {
-    axios.post('/api/comments')
+  addComment(term) {
+    axios.post('/api/comments', term)
       .then(() => {
         console.log('post request succeeded')
       })
@@ -40,7 +41,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="CM-comments">
-          <CommentsInputBar />
+          <CommentsInputBar addComment={this.addComment} />
           <Tracker />
           <MusicProfile />
           <CommentsList comments={this.state.comments} />

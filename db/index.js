@@ -63,13 +63,14 @@ const logCommentInDB = (input, callback) => {
     time: faker.date.recent(),
     reply: [],
   };
-  myComments.insertMany(comments)
-    .then((data) => {
-      callback(null, data);
-    })
-    .catch((error) => {
-      callback(error, null);
-    });
+  console.log(comments)
+  // myComments.insertMany(comments)
+  //   .then((data) => {
+  //     callback(null, data);
+  //   })
+  //   .catch((error) => {
+  //     callback(error, null);
+  //   });
 };
 
 module.exports = { getAllComments, logCommentInDB };
