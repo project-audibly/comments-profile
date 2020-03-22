@@ -26,7 +26,7 @@ class CommentsInputBar extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.input} onChange={this.handleChange} />
-          <input type="submit" value="submit" />
+          <input type="submit" />
         </form>
       </div>
     );

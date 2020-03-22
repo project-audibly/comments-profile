@@ -24,7 +24,7 @@ class ReplyInputBar extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input value={this.state.reply} onChange={this.handleInput} />
-          <input type='submit' value='submit' />
+          <input type='submit' />
         </form>
       </div>
     )

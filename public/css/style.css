@@ -18,3 +18,12 @@
 .CM-profile-album-image {
   height: 75px;
 }
+
+.CM-commentsEntry {
+  border: 1px;
+}
+
+.CM-replyEntry {
+  margin-left: 5%;
+  border: 1px;
+}
