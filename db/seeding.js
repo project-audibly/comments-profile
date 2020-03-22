@@ -30,7 +30,7 @@ const commentsCreater = () => {
 
 const commentAndReplyCreator = () => {
   const container = [];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < 10; i += 1) {
     const user = {
       name: faker.name.findName(),
       location: faker.address.city(),
@@ -78,7 +78,7 @@ const myComments = mongoose.model('comments',
   new mongoose.Schema(
     {
       songId: Number,
-      user: [childUser],
+      name: [childUser],
       text: String,
       time: Date,
       reply: [childReplies],

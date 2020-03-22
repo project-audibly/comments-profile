@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const faker = require('faker');
 
 mongoose.connect('mongodb://localhost:27017/audiblyComments', { useNewUrlParser: true }, (err) => {
   if (err) {
@@ -25,7 +26,7 @@ const myComments = mongoose.model('comments',
   new mongoose.Schema(
     {
       songId: Number,
-      user: [childUser],
+      name: [childUser],
       text: String,
       time: Date,
       reply: [childReplies],
@@ -42,4 +43,34 @@ const getAllComments = (callback) => {
     });
 };
 
-module.exports = { getAllComments };
+const songIdGen = () => {
+  const min = 1;
+  const max = 100;
+  return Math.floor(Math.random() * (max - min) + min);
+};
+
+const logCommentInDB = (input, callback) => {
+  const user = {
+    name: 'Guest',
+    location: 'San Francisco',
+    followers: 0,
+    image: 'public/images/guest-profile-pic.png',
+  };
+  const comments = {
+    songId: songIdGen(),
+    name: user,
+    text: input,
+    time: faker.date.recent(),
+    reply: [],
+  };
+  // console.log('data: ', comments)
+  myComments.insertMany(comments)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((error) => {
+      callback(error, null);
+    });
+};
+
+module.exports = { getAllComments, logCommentInDB };

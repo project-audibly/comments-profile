@@ -1,4 +1,7 @@
 import React from 'react';
+import likes from '../images/tracker-like.png';
+import plays from '../images/tracker-play-btn.png';
+import reposts from '../images/tracker-repost.png';
 
 class Tracker extends React.Component {
   constructor(props) {
@@ -7,7 +10,7 @@ class Tracker extends React.Component {
       plays: 0,
       likes: 0,
       reposts: 0,
-    }
+    };
   }
 
   render() {
@@ -22,15 +25,15 @@ class Tracker extends React.Component {
         </div>
       <div className='CM-trackerValues'>
         <div className='CM-track-plays'>
-          <img className='CM-tracker-play-image' src='public/images/tracker-play-btn.png' alt='' />
+          <img className='CM-tracker-play-image' src={plays} alt="" />
           {this.state.plays}
         </div>
         <div className='CM-track-likes'>
-          <img className='CM-tracker-likes-image' src='public/images/tracker-like.png' alt='' />
+          <img className='CM-tracker-likes-image' src={likes} alt="" />
           {this.state.likes}
         </div>
         <div className='CM-track-reposts'>
-          <img className='CM-tracker-reposts-image' src='public/images/tracker-repost.png' alt='' />
+          <img className='CM-tracker-reposts-image' src={reposts} alt="" />
           {this.state.reposts}
         </div>
       </div>

@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const db = require('../db/index.js');
-const bodyParser = require('body-parser')
 
 const app = express();
 const port = 4000;
@@ -15,6 +15,16 @@ app.get('/api/comments', (req, res) => {
   db.getAllComments((err, data) => {
     if (err) {
       res.status(400).send('unable to retrieve data from database');
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.post('/api/comments', (req, res) => {
+  db.logCommentInDB(req.body['input'], (err, data) => {
+    if (err) {
+      res.status(400).send('unable to log comment into database')
     } else {
       res.send(data);
     }

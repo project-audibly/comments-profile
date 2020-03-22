@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { ajax } from 'jquery'
 import CommentsList from './commentsList.jsx';
 import CommentsInputBar from './commentsInputBar.jsx'
 import Tracker from './tracker.jsx';
@@ -12,10 +11,15 @@ class App extends React.Component {
     this.state = {
       comments: [],
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.getComments = this.getComments.bind(this);
+    this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
+    this.getComments();
+  }
+  
+  getComments() {
     axios.get('/api/comments')
       .then((response) => {
         // console.log(response.data);
@@ -25,23 +29,24 @@ class App extends React.Component {
       .catch((error) => {
         console.log(error, 'failed to retrieve list of commments');
       });
-    // ajax({
-    //   method: 'GET',
-    //   url: '/api/comments',
-    //   success: () => {
-    //     console.log('client is now connected to server')
-    //   },
-    //   error: (err) => {
-    //     console.log(err, 'unable to connect client to server')
-    //   }
-    // })
+  }
+
+  addComment(input) {
+    console.log(`the comment ${input} was posted`)
+    axios.post('/api/comments', {input})
+      .then(() => {
+        console.log('post request succeeded')
+      })
+      .catch((error) => {
+        console.log(error, 'failed to post comment')
+      })
   }
 
   render() {
     return (
       <div>
         <div className="CM-comments">
-          <CommentsInputBar />
+          <CommentsInputBar addComment={this.addComment} />
           <Tracker />
           <MusicProfile />
           <CommentsList comments={this.state.comments} />
