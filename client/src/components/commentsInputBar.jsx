@@ -7,10 +7,9 @@ class CommentsInputBar extends React.Component {
       input: '',
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
-    const input = event.target.input;
     const value = event.target.value;
     this.setState({
       input: value,
@@ -18,20 +17,20 @@ class CommentsInputBar extends React.Component {
   }
 
   handleSubmit(event) {
+    this.props.addComment(this.state.input);
     event.preventDefault();
-    this.props.addComment(this.state.input)
   }
 
   render() {
     return (
       <div>
-        <forms onSubmit={this.handleSubmit}>
-          <input type='text' onChange={this.handleChange} />
-          <input type='submit' value='submit' />
-        </forms>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" value={this.state.input} onChange={this.handleChange} />
+          <input type="submit" value="submit" />
+        </form>
       </div>
-    )
+    );
   }
-};
+}
 
 export default CommentsInputBar;

@@ -63,7 +63,7 @@ const logCommentInDB = (input, callback) => {
     time: faker.date.recent(),
     reply: [],
   };
-  console.log(comments)
+  console.log(input, 'text')
   // myComments.insertMany(comments)
   //   .then((data) => {
   //     callback(null, data);

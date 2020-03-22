@@ -11,11 +11,15 @@ class App extends React.Component {
     this.state = {
       comments: [],
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.getComments = this.getComments.bind(this);
     this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
+    this.getComments();
+  }
+  
+  getComments() {
     axios.get('/api/comments')
       .then((response) => {
         // console.log(response.data);
@@ -27,8 +31,9 @@ class App extends React.Component {
       });
   }
 
-  addComment(term) {
-    axios.post('/api/comments', term)
+  addComment(input) {
+    console.log(`the comment ${input} was posted`)
+    axios.post('/api/comments', {input})
       .then(() => {
         console.log('post request succeeded')
       })
