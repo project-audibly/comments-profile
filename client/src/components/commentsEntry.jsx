@@ -1,5 +1,6 @@
 import React from 'react';
-import ReplyInputBar from './replyInputBar.jsx'
+import ReplyInputBar from './replyInputBar.jsx';
+import ReplyList from './replyList.jsx';
 
 class CommentsEntry extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class CommentsEntry extends React.Component {
         <div className="CM-time">{this.props.comment.time}</div>
         <input type='submit' value='Reply' onClick={this.showReply} />
           {this.state.show ? <ReplyInputBar /> : null}
+        <ReplyList replies={this.props.comment.reply} />
         </div>
       </div>
     )
