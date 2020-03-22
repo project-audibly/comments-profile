@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1584836967242" clover="3.2.0">
-  <project timestamp="1584836967242" name="All files">
-    <metrics statements="28" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="4" elements="44" coveredelements="11" complexity="0" loc="28" ncloc="28" packages="1" files="3" classes="3"/>
-    <file name="app.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/app.jsx">
-      <metrics statements="14" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="4"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="26" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
-      <line num="35" count="0" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-    </file>
+<coverage generated="1584844336816" clover="3.2.0">
+  <project timestamp="1584844336816" name="All files">
+    <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0" elements="8" coveredelements="0" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
     <file name="commentsEntry.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsEntry.jsx">
       <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <line num="14" count="0" type="stmt"/>
@@ -26,18 +9,6 @@
       <line num="18" count="0" type="stmt"/>
       <line num="21" count="0" type="stmt"/>
       <line num="27" count="0" type="stmt"/>
-    </file>
-    <file name="commentsInputBar.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsInputBar.jsx">
-      <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <line num="5" count="0" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="9" count="0" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

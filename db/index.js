@@ -26,7 +26,7 @@ const myComments = mongoose.model('comments',
   new mongoose.Schema(
     {
       songId: Number,
-      user: [childUser],
+      name: [childUser],
       text: String,
       time: Date,
       reply: [childReplies],
@@ -54,7 +54,7 @@ const logCommentInDB = (input, callback) => {
     name: 'Guest',
     location: 'San Francisco',
     followers: 0,
-    image: faker.image.abstract(),
+    image: 'public/images/guest-profile-pic.png',
   };
   const comments = {
     songId: songIdGen(),
@@ -63,14 +63,14 @@ const logCommentInDB = (input, callback) => {
     time: faker.date.recent(),
     reply: [],
   };
-  console.log(input, 'text')
-  // myComments.insertMany(comments)
-  //   .then((data) => {
-  //     callback(null, data);
-  //   })
-  //   .catch((error) => {
-  //     callback(error, null);
-  //   });
+  // console.log('data: ', comments)
+  myComments.insertMany(comments)
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((error) => {
+      callback(error, null);
+    });
 };
 
 module.exports = { getAllComments, logCommentInDB };

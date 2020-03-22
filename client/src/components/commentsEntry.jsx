@@ -27,8 +27,8 @@ class CommentsEntry extends React.Component {
     return (
       <div>
         <div className='CM commentEntry'>
-        <div><img className="CM-profileImage" src={this.props.comment.user[0].image} alt="" onMouseOver={this.showModal}/></div>
-        <div className="CM-userName">{this.props.comment.user[0].name}</div>
+        <div><img className="CM-profileImage" src={this.props.comment.name[0].image} alt='' onMouseOver={this.showModal}/></div>
+        <div className="CM-userName">{this.props.comment.name[0].name}</div>
         <div className="CM-commentText">{this.props.comment.text}</div>
         <div className="CM-time">{this.props.comment.time}</div>
         </div>
