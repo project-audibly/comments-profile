@@ -20,17 +20,19 @@ class CommentsEntry extends React.Component {
   render() {
     return (
       <div>
-        <div className='CM commentEntry'>
-        <div><img className="CM-profileImage" src={this.props.comment.name[0].image} alt='' onMouseOver={this.showModal}/></div>
-        <div className="CM-userName">{this.props.comment.name[0].name}</div>
-        <div className="CM-commentText">{this.props.comment.text}</div>
-        <div className="CM-time">{this.props.comment.time}</div>
-        <input type='submit' value='Reply' onClick={this.showReply} />
+        <div className="CM-commentEntry">
+          <img className="CM-profileImage" src={this.props.comment.name[0].image} alt='' />
+          <div className="CM-userName">{this.props.comment.name[0].name}</div>
+          <div className="CM-commentText">{this.props.comment.text}</div>
+          <div className="CM-time">{this.props.comment.time}</div>
+          <input className="CM-reply-btn" type='submit' value='Reply' onClick={this.showReply} />
           {this.state.show ? <ReplyInputBar /> : null}
-        <ReplyList replies={this.props.comment.reply} />
+          <div className='CM-reply-list'>
+          <ReplyList replies={this.props.comment.reply} />
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

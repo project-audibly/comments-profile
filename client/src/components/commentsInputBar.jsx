@@ -19,6 +19,9 @@ class CommentsInputBar extends React.Component {
   handleSubmit(event) {
     this.props.addComment(this.state.input);
     event.preventDefault();
+    this.setState({
+      input: '',
+    })
   }
 
   render() {

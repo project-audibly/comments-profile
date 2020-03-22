@@ -1,6 +1,6 @@
-.CM-profileImage {
-  border-radius: 50%;
-  height: 30px;
+
+.CM-comments-icon {
+  height: 15px;
 }
 
 .CM-tracker-play-image {
@@ -19,11 +19,70 @@
   height: 75px;
 }
 
-.CM-commentsEntry {
+
+
+/* Comments Entry */
+
+.CM-commentEntry {
   border: 1px;
+  display: grid;
+  grid-template-columns: 5% auto 15%;
+  grid-template-rows: 20px 20px auto;
+  grid-template-areas: "pic user time"
+                       "pic sentence reply"
+                       "list list list";
 }
 
+.CM-profileImage {
+  border-radius: 50%;
+  height: 30px;
+  grid-area: pic;
+}
+
+.CM-userName {
+  grid-area: user;
+}
+
+.CM-commentText {
+  grid-area: sentence;
+}
+
+.CM-time {
+  grid-area: time;
+}
+
+.CM-reply-btn {
+  grid-area: reply;
+}
+
+.CM-reply-list {
+  grid-area: list;
+}
+
+/* Reply Entry */
 .CM-replyEntry {
   margin-left: 5%;
-  border: 1px;
+  display: grid;
+  grid-template-columns: 5% auto 15%;
+  grid-template-rows: 20px 20px;
+  grid-template-areas: "pic2 user2 time2"
+                       "pic2 sentence2 sentence2";
+}
+
+.CM-profileImage2 {
+  border-radius: 50%;
+  height: 30px;
+  grid-area: pic2;
+}
+
+.CM-userName2 {
+  grid-area: user2;
+}
+
+.CM-commentText2 {
+  grid-area: sentence2;
+}
+
+.CM-time2 {
+  grid-area: time2;
 }

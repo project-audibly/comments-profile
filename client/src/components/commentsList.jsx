@@ -1,31 +1,20 @@
 import React from 'react';
 import CommentsEntry from './commentsEntry.jsx';
+import commentsIcon from '../images/comments-icon.png';
 
-const CommentsList = ({comments}) => (
+const CommentsList = ({ comments }) => (
   <div>
-    {comments.map((comment) => 
-      <CommentsEntry comment={comment} key={comment._id} />
-    )}
+    <div className='CM-commentLength'>
+      <img className="CM-comments-icon" src={commentsIcon} alt="" />
+      {`${comments.length} comments`}
+    </div>
+    <div className="CM-commentList">
+      {comments.map((comment) =>
+        <CommentsEntry comment={comment} key={comment._id} />
+      )}
+    </div>
   </div>
 );
-
-// class CommentsList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       show: false,
-//     };
-//   }
-//   render() {
-//     return (
-//       <div>
-//         {this.props.comments.map((comment) =>
-//           <CommentsEntry comment={comment} />
-//         )}
-//       </div>
-//     )
-//   }
-// }
 
 
 export default CommentsList;
