@@ -54,7 +54,7 @@ const logCommentInDB = (input, callback) => {
     name: 'Guest',
     location: 'San Francisco',
     followers: 0,
-    image: 'public/images/guest-profile-pic.png',
+    image: faker.image.avatar(),
   };
   const comments = {
     songId: songIdGen(),
