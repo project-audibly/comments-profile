@@ -18,7 +18,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getComments();
   }
-  
+
   getComments() {
     axios.get('/api/comments')
       .then((response) => {
@@ -31,15 +31,22 @@ class App extends React.Component {
       });
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.comments !== this.state.comments) {
+  //     this.getComments();
+  //   }
+  // }
+
   addComment(input) {
     console.log(`the comment ${input} was posted`)
     axios.post('/api/comments', {input})
       .then(() => {
         console.log('post request succeeded')
+        this.getComments();
       })
       .catch((error) => {
         console.log(error, 'failed to post comment')
-      })
+      });
   }
 
   render() {

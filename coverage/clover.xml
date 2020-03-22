@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1584844336816" clover="3.2.0">
-  <project timestamp="1584844336816" name="All files">
-    <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0" elements="8" coveredelements="0" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
+<coverage generated="1584849367748" clover="3.2.0">
+  <project timestamp="1584849367748" name="All files">
+    <metrics statements="16" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="2" elements="27" coveredelements="5" complexity="0" loc="16" ncloc="16" packages="1" files="3" classes="3"/>
     <file name="commentsEntry.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsEntry.jsx">
-      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
       <line num="14" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
-      <line num="18" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+    </file>
+    <file name="commentsList.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/commentsList.jsx">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="3" type="stmt"/>
+    </file>
+    <file name="replyInputBar.jsx" path="/Users/patmac510/Documents/hackreactor/comments-profile/client/src/components/replyInputBar.jsx">
+      <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

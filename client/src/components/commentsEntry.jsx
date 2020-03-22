@@ -1,13 +1,5 @@
 import React from 'react';
-
-// const CommentsEntry = ({comment}) => (
-//   <div>
-//     <div><img className="CM-profileImage" src={comment.user[0].image} alt="" /></div>
-//     <div className="CM-userName">{comment.user[0].name}</div>
-//     <div className="CM-commentText">{comment.text}</div>
-//     <div className="CM-time">{comment.time}</div>
-//   </div>
-// );
+import ReplyInputBar from './replyInputBar.jsx'
 
 class CommentsEntry extends React.Component {
   constructor(props) {
@@ -15,12 +7,13 @@ class CommentsEntry extends React.Component {
     this.state = {
       show: false,
     };
-    this.showModal = this.showModal.bind(this);
+    this.showReply = this.showReply.bind(this);
   }
-  showModal() {
+
+  showReply() {
     this.setState({
       show: !this.state.show,
-    })
+    });
   }
 
   render() {
@@ -31,6 +24,8 @@ class CommentsEntry extends React.Component {
         <div className="CM-userName">{this.props.comment.name[0].name}</div>
         <div className="CM-commentText">{this.props.comment.text}</div>
         <div className="CM-time">{this.props.comment.time}</div>
+        <input type='submit' value='Reply' onClick={this.showReply} />
+          {this.state.show ? <ReplyInputBar /> : null}
         </div>
       </div>
     )
