@@ -19,7 +19,7 @@ const childUser = new mongoose.Schema({
 const childReplies = new mongoose.Schema({
   name: [childUser],
   text: String,
-  time: Date,
+  time: Number,
 });
 
 const myComments = mongoose.model('comments',
@@ -28,7 +28,7 @@ const myComments = mongoose.model('comments',
       songId: Number,
       name: [childUser],
       text: String,
-      time: Date,
+      time: Number,
       reply: [childReplies],
     },
   ));
@@ -60,7 +60,7 @@ const logCommentInDB = (input, callback) => {
     songId: songIdGen(),
     name: user,
     text: input,
-    time: faker.date.recent(),
+    time: new Date().getTime(),
     reply: [],
   };
   // console.log('data: ', comments)

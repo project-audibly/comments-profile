@@ -5,7 +5,7 @@ body {
 .CM-comments-app {
   margin: 50px;
   display: grid;
-  grid-template-columns: 80%;
+  grid-template-columns: 60%;
   grid-template-rows: 30px 30px 200px auto;
   grid-template-areas: "input"
                        "tracker"
@@ -15,17 +15,16 @@ body {
 
 .CM-comments-input-bar {
   grid-area: input;
-  width: 700px;
 }
 
 .CM-input-bar {
-  width: 600px;
+  width: 90%;
 }
 
 .CM-tracker {
   grid-area: tracker;
   display: grid;
-  grid-template-columns: 500px 400px;
+  grid-template-columns: 80% 20%;
   grid-template-rows: 30px;
   grid-template-areas: "tracker-left tracker-right";
 }
@@ -36,23 +35,26 @@ body {
 
 .CM-trackerValues {
   grid-area: tracker-right;
+  text-align: right;
 }
 
 .CM-music-profile {
   grid-area: profile;
   display: grid;
-  grid-template-columns: 150px 700px;
+  grid-template-columns: 15% 85%;
   grid-template-rows: 200px;
   grid-template-areas: "profile-left profile-right";
 }
 
 .CM-comment-section {
   grid-area: comment;
-  margin-left: 100px;
+  margin-left: 10%;
 }
 
 .CM-musicProfile-left {
   grid-area: profile-left;
+  position: absolute;
+  text-align: center;
 }
 
 .CM-musicProfile-right {
@@ -75,7 +77,8 @@ body {
 }
 
 .CM-profile-album-image {
-  height: 75px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 
@@ -87,12 +90,12 @@ body {
 }
 
 .CM-commentEntry {
-  border: 1px;
   display: grid;
   grid-template-columns: 5% auto 15%;
-  grid-template-rows: 20px 20px auto;
+  grid-template-rows: 20px 20px 20px auto;
   grid-template-areas: "pic user time"
                        "pic sentence reply"
+                       "reply-bar reply-bar reply-bar"
                        "list list list";
 }
 
@@ -116,6 +119,14 @@ body {
 
 .CM-reply-btn {
   grid-area: reply;
+}
+
+.CM-reply-input-bar {
+  grid-area: reply-bar;
+}
+
+.CM-reply-bar {
+  width: 600px;
 }
 
 .CM-reply-list {

@@ -21,7 +21,7 @@ const commentsCreater = () => {
     const comments = {
       name: user,
       text: faker.lorem.sentence(),
-      time: faker.date.recent(),
+      time: faker.date.recent().getTime(),
     };
     commentsContainer.push(comments);
   }
@@ -41,7 +41,7 @@ const commentAndReplyCreator = () => {
       songId: songIdGen(),
       name: user,
       text: faker.lorem.sentence(),
-      time: faker.date.recent(),
+      time: faker.date.recent().getTime(),
       reply: commentsCreater(),
     };
     container.push(commentsAndReplies);
@@ -71,7 +71,7 @@ const childUser = new mongoose.Schema({
 const childReplies = new mongoose.Schema({
   name: [childUser],
   text: String,
-  time: Date,
+  time: Number,
 });
 
 const myComments = mongoose.model('comments',
@@ -80,7 +80,7 @@ const myComments = mongoose.model('comments',
       songId: Number,
       name: [childUser],
       text: String,
-      time: Date,
+      time: Number,
       reply: [childReplies],
     },
   ));
