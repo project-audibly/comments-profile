@@ -23,7 +23,7 @@ class CommentsEntry extends React.Component {
     return (
       <div>
         <div className="CM-commentEntry">
-          <UserToolTip>
+          <UserToolTip user={this.props.comment.name[0]} >
             <img className="CM-profileImage" src={this.props.comment.name[0].image} alt='' />
           </UserToolTip>
           <div className="CM-userName">{this.props.comment.name[0].name}</div>

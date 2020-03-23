@@ -27,12 +27,12 @@ class UserToolTip extends React.Component {
       <div>
         <span className="CM-tool-tip" onMouseLeave={this.handleMouseLeave} >
           {this.state.visible &&
-            <span className="CM-tool-tip-bubble" >
+            <span className="CM-tool-tip-bubble CM-tool-tip-bottom" >
               <div>
-                <img className="CM-tool-tip-profile-pic" src="" alt="" />
-                <div className="CM-tool-tip-user">username</div>
-                <div className="CM-tool-tip-followers">followers</div>
-                <div className="CM-tool-tip-location">location</div>
+                <img className="CM-tool-tip-profile-pic" src={this.props.user.image} alt="" />
+                <div className="CM-tool-tip-user">{this.props.user.name}</div>
+                <div className="CM-tool-tip-followers">{this.props.user.followers}</div>
+                <div className="CM-tool-tip-location">{this.props.user.location}</div>
                 <button className="CM-tool-tip-follow-btn">follow</button>
               </div>
             </span>

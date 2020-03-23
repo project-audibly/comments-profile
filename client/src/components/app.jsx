@@ -52,7 +52,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="CM-comments">
+        <div className="CM-comments-app">
           <CommentsInputBar addComment={this.addComment} />
           <Tracker />
           <MusicProfile />

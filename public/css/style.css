@@ -1,7 +1,66 @@
-
-.CM-comments-icon {
-  height: 15px;
+body {
+  margin: 30px;
 }
+
+.CM-comments-app {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 80%;
+  grid-template-rows: 30px 30px 200px auto;
+  grid-template-areas: "input"
+                       "tracker"
+                       "profile"
+                       "comment";
+}
+
+.CM-comments-input-bar {
+  grid-area: input;
+  width: 700px;
+}
+
+.CM-input-bar {
+  width: 600px;
+}
+
+.CM-tracker {
+  grid-area: tracker;
+  display: grid;
+  grid-template-columns: 500px 400px;
+  grid-template-rows: 30px;
+  grid-template-areas: "tracker-left tracker-right";
+}
+
+.CM-tracker-btn {
+  grid-area: tracker-left;
+}
+
+.CM-trackerValues {
+  grid-area: tracker-right;
+}
+
+.CM-music-profile {
+  grid-area: profile;
+  display: grid;
+  grid-template-columns: 150px 700px;
+  grid-template-rows: 200px;
+  grid-template-areas: "profile-left profile-right";
+}
+
+.CM-comment-section {
+  grid-area: comment;
+  margin-left: 100px;
+}
+
+.CM-musicProfile-left {
+  grid-area: profile-left;
+}
+
+.CM-musicProfile-right {
+  grid-area: profile-right;
+}
+
+
+/* Tracker  */
 
 .CM-tracker-play-image {
   height: 15px;
@@ -22,6 +81,10 @@
 
 
 /* Comments Entry */
+
+.CM-comments-icon {
+  height: 15px;
+}
 
 .CM-commentEntry {
   border: 1px;
@@ -85,4 +148,48 @@
 
 .CM-time2 {
   grid-area: time2;
+}
+
+
+/* User Tool Tip */
+
+.CM-tool-tip {
+  position: relative;
+}
+
+.CM-tool-tip-bubble {
+  min-width: 70px;
+  max-width: 160px;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 30px 10px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+}
+
+.CM-tool-tip-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #ccc transparent;
+  /* border: solid 1px #ccc; */
+}
+
+.CM-tool-tip-bottom {
+  top: 100%;
+  left: 50%;
+  padding-top: 9px;
+  transform: translateX(-50%);
+}
+
+.CM-tool-tip-profile-pic {
+  height: 70px;
+  border-radius: 50%;
 }
