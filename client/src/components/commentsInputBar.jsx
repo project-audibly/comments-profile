@@ -28,8 +28,7 @@ class CommentsInputBar extends React.Component {
     return (
       <div className="CM-comments-input-bar">
         <form onSubmit={this.handleSubmit}>
-          <input className="CM-input-bar" type="text" value={this.state.input} onChange={this.handleChange} />
-          <input type="submit" />
+          <input className="CM-input-bar" type="text" placeholder="Write a comment" value={this.state.input} onChange={this.handleChange} />
         </form>
       </div>
     );
