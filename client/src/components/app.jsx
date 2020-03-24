@@ -16,7 +16,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getComments();
+    // this.getComments();
+    this.interval = setInterval(() => this.getComments(), 3000);
   }
 
   getComments() {
