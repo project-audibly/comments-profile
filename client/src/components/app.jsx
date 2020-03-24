@@ -13,15 +13,29 @@ class App extends React.Component {
     };
     this.getComments = this.getComments.bind(this);
     this.addComment = this.addComment.bind(this);
+    this.getReplies = this.getReplies.bind(this);
+    this.addReply = this.addReply.bind(this);
   }
 
   componentDidMount() {
-    // this.getComments();
-    this.interval = setInterval(() => this.getComments(), 3000);
+    this.getComments();
+    // this.interval = setInterval(() => this.getComments(), 3000);
   }
 
   getComments() {
     axios.get('/api/comments')
+      .then((response) => {
+        // console.log(response.data);
+        this.setState({ comments: response.data });
+        console.log('Success! Retrieved data from server');
+      })
+      .catch((error) => {
+        console.log(error, 'failed to retrieve list of commments');
+      });
+  }
+
+  getReplies() {
+    axios.get('/api/reply')
       .then((response) => {
         // console.log(response.data);
         this.setState({ comments: response.data });
@@ -49,6 +63,7 @@ class App extends React.Component {
     axios.post('/api/reply', { reply, id })
       .then(() => {
         console.log('post request suceeeded');
+        this.getReplies();
       })
       .catch((error) => {
         console.log(error, 'cannot post reply right now');
