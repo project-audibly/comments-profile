@@ -65,7 +65,7 @@ class CommentsEntry extends React.Component {
           <div className="CM-commentText">{this.props.comment.text}</div>
           <div className="CM-time">{this.state.time}</div>
           <input className="CM-reply-btn" type='submit' value='Reply' onClick={this.showReply} />
-          {this.state.show ? <ReplyInputBar addReply={this.props.addReply} id={this.props.comment._id} /> : null}
+          {this.state.show ? <ReplyInputBar /> : null}
           <div className='CM-reply-list'>
             <ReplyList replies={this.props.comment.reply} />
           </div>
