@@ -21,6 +21,16 @@ app.get('/api/comments', (req, res) => {
   });
 });
 
+app.get('/api/tracker', (req, res) => {
+  db.getAllTrackers((err, data) => {
+    if (err) {
+      res.status(400).send('unable to retrieve tracker data from database');
+    } else {
+      res.send(data);
+    }
+  });
+});
+
 app.post('/api/comments', (req, res) => {
   db.logCommentInDB(req.body['input'], (err, data) => {
     if (err) {

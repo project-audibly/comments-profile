@@ -1,20 +1,77 @@
 import React from 'react';
+import axios from 'axios';
 import albumProfile from '../images/profile-album-image.jpg';
+import trackIcon from '../images/tracks-icon.png';
+import followersIcon from '../images/followers-icon.png';
 
-const MusicProfile = () => (
-  <div>
-    <div className="CM-musicProfile-left">
-      <div>
-        <img className="CM-profile-album-image" src={albumProfile} alt="album-profile" />
+class MusicProfile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      followers: 0,
+      tracks: 0,
+    };
+  }
+
+  componentDidMount() {
+    this.getTrackedInfo();
+  }
+
+  getTrackedInfo() {
+    axios.get('/api/tracker')
+      .then((response) => {
+        console.log('grabbing tracker info');
+        this.setState({
+          followers: response.data[0].plays,
+          tracks: response.data[0].tracks,
+        });
+      })
+      .catch((error) => {
+        console.log(error, 'unable to grab tracker info');
+      });
+  }
+
+  render() {
+    return (
+      <div className="CM-music-profile">
+        <span className="CM-musicProfile-left">
+          <div>
+            <img className="CM-profile-album-image" src={albumProfile} alt="album-profile" />
+          </div>
+          <div>Pink Floyd</div>
+          <div>
+            <span>
+              <img className="CM-follower-icon" src={followersIcon} alt="" />{this.state.followers}
+            </span>
+            <span>
+              <img className="CM-tracks-icon" src={trackIcon} alt="" /> {this.state.tracks}
+            </span>
+          </div>
+          <button>follow</button>
+        </span>
+        <span className="CM-musicProfile-right">
+          <div>
+            <strong>Released By:</strong>
+            <div>ATO Records</div>
+          </div>
+          <div>
+            <strong>Released Date:</strong>
+            <div>January 24, 2018</div>
+          </div>
+          <div>
+            <strong>P-Line:</strong>
+            <div>℗ 2017 Flightless Records, under exclusive license to ATO Records, LLC.</div>
+          </div>
+          <div>
+            <strong>C-Line:</strong>
+            <div>© 2017 2017 Flightless Records, under exclusive license to ATO Records, LLC.</div>
+          </div>
+        </span>
       </div>
-      <div>name</div>
-      <div>followers   tracks</div>
-      <button>follow</button>
-    </div>
-    <div className="CM-musicProfile-right">
-      music info
-    </div>
-  </div>
-);
+    );
+  }
+}
+
+
 
 export default MusicProfile;
