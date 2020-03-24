@@ -5,18 +5,20 @@ class ReplyInputBar extends React.Component {
     super(props);
     this.state = {
       reply: '',
-    }
-    this.handleInput=this.handleInput.bind(this);
-    this.handleSubmit=this.handleSubmit.bind(this);
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleInput(event) {
     const  value = event.target.value;
     this.setState({
       reply: value,
-    })
+    });
   }
+
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
   }
 
   render() {
@@ -26,7 +28,7 @@ class ReplyInputBar extends React.Component {
           <input className="CM-reply-bar" placeholder="Write a reply" value={this.state.reply} onChange={this.handleInput} />
         </form>
       </div>
-    )
+    );
   }
 }
 

@@ -21,6 +21,11 @@ app.get('/api/comments', (req, res) => {
   });
 });
 
+app.get('/api/tracker', (req, res) => {
+  console.log('grabbing tracked info');
+  res.send({});
+});
+
 app.post('/api/comments', (req, res) => {
   db.logCommentInDB(req.body['input'], (err, data) => {
     if (err) {

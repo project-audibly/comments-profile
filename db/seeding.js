@@ -15,7 +15,7 @@ const commentsCreater = () => {
     const user = {
       name: faker.name.findName(),
       location: faker.address.city(),
-      followers: faker.random.number(),
+      followers: faker.random.number({'min':10, 'max': 300}),
       image: faker.image.avatar(),
     };
     const comments = {
@@ -34,7 +34,7 @@ const commentAndReplyCreator = () => {
     const user = {
       name: faker.name.findName(),
       location: faker.address.city(),
-      followers: faker.random.number(),
+      followers: faker.random.number({'min':10, 'max': 300}),
       image: faker.image.avatar(),
     };
     const commentsAndReplies = {
@@ -86,3 +86,31 @@ const myComments = mongoose.model('comments',
   ));
 
 myComments.insertMany(allComments);
+
+
+const myTracker = mongoose.model('trackers',
+  new mongoose.Schema(
+    {
+      plays: Number,
+      likes: Number,
+      reposts: Number,
+      follows: Number,
+      tracks: Number,
+    },
+  ));
+
+const trackers = new myTracker({
+  plays: faker.random.number({'min':10, 'max': 300}),
+  likes: faker.random.number({'min':10, 'max': 300}),
+  reposts: faker.random.number({'min':10, 'max': 300}),
+  follows: faker.random.number({'min':10, 'max': 300}),
+  tracks: faker.random.number({'min':10, 'max': 300}),
+});
+
+trackers.save((err) => {
+  if (err) {
+    console.log(err, 'could not seed trackers into db');
+  } else {
+    console.log('trackers seeded');
+  }
+});
