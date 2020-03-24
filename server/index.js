@@ -32,9 +32,19 @@ app.get('/api/tracker', (req, res) => {
 });
 
 app.post('/api/comments', (req, res) => {
-  db.logCommentInDB(req.body['input'], (err, data) => {
+  db.logCommentInDB(req.body.input, (err, data) => {
     if (err) {
       res.status(400).send('unable to log comment into database')
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.post('/api/reply', (req, res) => {
+  db.logReplyInDB(req.body.reply, req.body.id, (err, data) => {
+    if (err) {
+      res.status(400).send('unable to log reply in database')
     } else {
       res.send(data);
     }

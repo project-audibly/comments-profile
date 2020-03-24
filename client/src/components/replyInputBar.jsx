@@ -11,14 +11,17 @@ class ReplyInputBar extends React.Component {
   }
 
   handleInput(event) {
-    const  value = event.target.value;
     this.setState({
-      reply: value,
+      reply: event.target.value,
     });
   }
 
   handleSubmit(event) {
+    this.props.addReply(this.state.reply, this.props.id);
     event.preventDefault();
+    this.setState({
+      reply: '',
+    });
   }
 
   render() {
