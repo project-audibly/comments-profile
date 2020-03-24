@@ -1,8 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import likes from '../images/tracker-like.png';
 import plays from '../images/tracker-play-btn.png';
 import reposts from '../images/tracker-repost.png';
-import axios from 'axios'
 
 class Tracker extends React.Component {
   constructor(props) {
@@ -16,16 +16,21 @@ class Tracker extends React.Component {
   }
 
   componentDidMount() {
-    this.getTrackedInfo()
+    this.getTrackedInfo();
   }
 
   getTrackedInfo() {
     axios.get('/api/tracker')
-      .then(() => {
-        console.log('grabbing tracker info')
+      .then((response) => {
+        console.log('grabbing tracker info');
+        this.setState({
+          plays: response.data[0].plays,
+          likes: response.data[0].likes,
+          reposts: response.data[0].reposts,
+        });
       })
       .catch((error) => {
-        console.log(error, 'unable to grab tracker info')
+        console.log(error, 'unable to grab tracker info');
       });
   }
 

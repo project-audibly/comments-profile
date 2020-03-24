@@ -33,8 +33,29 @@ const myComments = mongoose.model('comments',
     },
   ));
 
+  const myTracker = mongoose.model('trackers',
+  new mongoose.Schema(
+    {
+      plays: Number,
+      likes: Number,
+      reposts: Number,
+      follows: Number,
+      tracks: Number,
+    },
+  ));
+
 const getAllComments = (callback) => {
   myComments.find({})
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
+
+const getAllTrackers = (callback) => {
+  myTracker.find({})
     .then((data) => {
       callback(null, data);
     })
@@ -73,4 +94,4 @@ const logCommentInDB = (input, callback) => {
     });
 };
 
-module.exports = { getAllComments, logCommentInDB };
+module.exports = { getAllComments, logCommentInDB, getAllTrackers };

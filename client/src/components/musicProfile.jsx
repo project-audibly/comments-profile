@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import albumProfile from '../images/profile-album-image.jpg';
 import trackIcon from '../images/tracks-icon.png';
 import followersIcon from '../images/followers-icon.png';
@@ -10,6 +11,24 @@ class MusicProfile extends React.Component {
       followers: 0,
       tracks: 0,
     };
+  }
+
+  componentDidMount() {
+    this.getTrackedInfo();
+  }
+
+  getTrackedInfo() {
+    axios.get('/api/tracker')
+      .then((response) => {
+        console.log('grabbing tracker info');
+        this.setState({
+          followers: response.data[0].plays,
+          tracks: response.data[0].tracks,
+        });
+      })
+      .catch((error) => {
+        console.log(error, 'unable to grab tracker info');
+      });
   }
 
   render() {
