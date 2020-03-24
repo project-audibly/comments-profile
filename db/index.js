@@ -94,4 +94,27 @@ const logCommentInDB = (input, callback) => {
     });
 };
 
-module.exports = { getAllComments, logCommentInDB, getAllTrackers };
+const logReplyInDB = (input, id, callback) => {
+  const user = {
+    name: 'Guest',
+    location: 'San Francisco',
+    followers: 0,
+    image: faker.image.avatar(),
+  };
+  const myReply = {
+    songId: songIdGen(),
+    name: user,
+    text: input,
+    time: new Date().getTime(),
+  };
+  myComments.findOneAndUpdate({ _id: id }, { $push: { reply: myReply } })
+    .then((data) => {
+      callback(null, data);
+    })
+    .catch((err) => {
+      callback(err, null);
+    });
+};
+
+module.exports = { getAllComments, logCommentInDB, getAllTrackers, logReplyInDB};
+
