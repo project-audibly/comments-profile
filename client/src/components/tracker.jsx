@@ -13,7 +13,6 @@ class Tracker extends React.Component {
       reposts: 0,
     };
     this.getTrackedInfo = this.getTrackedInfo.bind(this);
-    this.alertUser = this.alertUser.bind(this);
   }
 
   componentDidMount() {
@@ -35,19 +34,15 @@ class Tracker extends React.Component {
       });
   }
 
-  alertUser() {
-    alert('Please log in first');
-  }
-
   render() {
     return (
       <div className='CM-tracker'>
         <span className='CM-tracker-btn'>
-          <button type="button" onClick={this.alertUser} className="CM-like-btn">like</button>
-          <button type="button" onClick={this.alertUser} className="CM-repost-btn">repost</button>
-          <button type="button" onClick={this.alertUser} className="CM-share-btn">share</button>
-          <button type="button" onClick={this.alertUser} className="CM-addToNextUp-btn">Add to Next Up</button>
-          <button type="button" onClick={this.alertUser} className="CM-more-btn">more...</button>
+          <button className='CM-like-btn'>like</button>
+          <button className='CM-repost-btn'>repost</button>
+          <button className='CM-share-btn'>share</button>
+          <button className='CM-addToNextUp-btn'>Add to Next Up</button>
+          <button className='CM-more-btn'>more...</button>
         </span>
         <span className='CM-trackerValues'>
           <span className='CM-track-plays'>

@@ -116,5 +116,5 @@ const logReplyInDB = (input, id, callback) => {
     });
 };
 
-module.exports = { getAllComments, logCommentInDB, getAllTrackers, logReplyInDB};
+module.exports = { getAllComments, logCommentInDB, getAllTrackers, logReplyInDB };
 

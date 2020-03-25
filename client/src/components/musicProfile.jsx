@@ -11,8 +11,6 @@ class MusicProfile extends React.Component {
       followers: 0,
       tracks: 0,
     };
-    this.getTrackedInfo = this.getTrackedInfo.bind(this);
-    this.alertUser = this.alertUser.bind(this);
   }
 
   componentDidMount() {
@@ -33,10 +31,6 @@ class MusicProfile extends React.Component {
       });
   }
 
-  alertUser() {
-    alert('Please log in first');
-  }
-
   render() {
     return (
       <div className="CM-music-profile">
@@ -53,7 +47,7 @@ class MusicProfile extends React.Component {
               <img className="CM-tracks-icon" src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/music-notes.png" alt="" /> {this.state.tracks}
             </span>
           </div>
-          <button type="button" onClick={this.alertUser}>follow</button>
+          <button>follow</button>
         </span>
         <span className="CM-musicProfile-right">
           <div>
