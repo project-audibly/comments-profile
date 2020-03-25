@@ -51,15 +51,15 @@ class Tracker extends React.Component {
         </span>
         <span className='CM-trackerValues'>
           <span className='CM-track-plays'>
-            <img className='CM-tracker-play-image' src={plays} alt="" />
+            <img className='CM-tracker-play-image' src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/play-icon.png" alt="" />
             {this.state.plays}
           </span>
           <span className='CM-track-likes'>
-            <img className='CM-tracker-likes-image' src={likes} alt="" />
+            <img className='CM-tracker-likes-image' src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/heart-icon.png" alt="" />
             {this.state.likes}
           </span>
           <span className='CM-track-reposts'>
-            <img className='CM-tracker-reposts-image' src={reposts} alt="" />
+            <img className='CM-tracker-reposts-image' src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/repost-icon.png" alt="" />
             {this.state.reposts}
           </span>
         </span>

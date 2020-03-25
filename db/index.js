@@ -75,7 +75,7 @@ const logCommentInDB = (input, callback) => {
     name: 'Guest',
     location: 'San Francisco',
     followers: 0,
-    image: faker.image.avatar(),
+    image: 'https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/guest-icon.png',
   };
   const comments = {
     songId: songIdGen(),
@@ -99,7 +99,7 @@ const logReplyInDB = (input, id, callback) => {
     name: 'Guest',
     location: 'San Francisco',
     followers: 0,
-    image: faker.image.avatar(),
+    image: 'https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/guest-icon.png',
   };
   const myReply = {
     songId: songIdGen(),

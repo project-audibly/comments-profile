@@ -42,15 +42,15 @@ class MusicProfile extends React.Component {
       <div className="CM-music-profile">
         <span className="CM-musicProfile-left">
           <div>
-            <img className="CM-profile-album-image" src={albumProfile} alt="album-profile" />
+            <img className="CM-profile-album-image" src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/album-cover.jpg" alt="album-profile" />
           </div>
           <div>Pink Floyd</div>
           <div>
             <span>
-              <img className="CM-follower-icon" src={followersIcon} alt="" />{this.state.followers}
+              <img className="CM-follower-icon" src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/followers-icon.png" alt="" />{this.state.followers}
             </span>
             <span>
-              <img className="CM-tracks-icon" src={trackIcon} alt="" /> {this.state.tracks}
+              <img className="CM-tracks-icon" src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/music-notes.png" alt="" /> {this.state.tracks}
             </span>
           </div>
           <button type="button" onClick={this.alertUser}>follow</button>

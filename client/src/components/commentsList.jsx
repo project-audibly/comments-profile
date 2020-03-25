@@ -5,7 +5,7 @@ import commentsIcon from '../images/comments-icon.png';
 const CommentsList = ({ comments, addReply }) => (
   <div className="CM-comment-section">
     <div className='CM-commentLength'>
-      <img className="CM-comments-icon" src={commentsIcon} alt="" />
+      <img className="CM-comments-icon" src="https://theholybucket.s3-us-west-1.amazonaws.com/projectaudibly/comments-icon.png" alt="" />
       {`${comments.length} comments`}
     </div>
     <div className="CM-commentList">
