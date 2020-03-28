@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const faker = require('faker');
 
-mongoose.connect('mongodb://localhost:27017/audiblyComments', { useNewUrlParser: true }, (err) => {
-  if (err) {
-    console.log(err, 'unable to connect to database');
-  } else {
-    console.log('connected to database');
-  }
-});
-
+mongoose.connect('mongodb://172.17.0.2:27017/audiblyComments', { useNewUrlParser: true })
+  .then(() => {
+    console.log('Connection to Mongo Database established. What would you like to do today?');
+  })
+  .catch((err) => {
+    console.log(err, 'We are unable to establish a connection with Mongo Database . . . Please try again.')
+  });
+  
 const childUser = new mongoose.Schema({
   name: String,
   location: String,

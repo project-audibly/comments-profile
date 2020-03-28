@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+// import CSSModules from 'react-css-modules';
 import CommentsList from './commentsList.jsx';
 import CommentsInputBar from './commentsInputBar.jsx'
 import Tracker from './tracker.jsx';
 import MusicProfile from './musicProfile.jsx'
+// import styles from './app.css';
 
 class App extends React.Component {
   constructor(props) {
